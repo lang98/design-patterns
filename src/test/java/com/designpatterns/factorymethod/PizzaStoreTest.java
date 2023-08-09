@@ -15,8 +15,14 @@ public class PizzaStoreTest {
     }
 
     @Test
-    void shouldSucceed_makeNYPizzas() {
+    void shouldSucceed_makeNYCheesePizzas() {
         Pizza pizza = nyPizzaStore.orderPizza("cheese");
         assertThat(pizza.operations, hasItems("prepare NYCheese", "bake NYCheese", "cut NYCheese", "box NYCheese"));
+    }
+
+    @Test
+    void shouldSucceed_makeNYVeggiePizzas() {
+        Pizza pizza = nyPizzaStore.orderPizza("veggie");
+        assertThat(pizza.operations, hasItems("prepare NYVeggie", "bake NYVeggie", "cut NYVeggie", "box NYVeggie"));
     }
 }
