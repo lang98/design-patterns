@@ -1,10 +1,13 @@
 package com.designpatterns.factorymethod;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class Pizza {
-    public List<String> operations = new ArrayList<>();
+    List<String> operations = new ArrayList<>();
 
     void prepare() {
         operations.add("prepare");

@@ -1,10 +1,13 @@
 package com.designpatterns.abstractfactory;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public abstract class Pizza {
-    public List<String> operations = new ArrayList<>();
+    List<String> operations = new ArrayList<>();
     Dough dough;
     Sauce sauce;
 

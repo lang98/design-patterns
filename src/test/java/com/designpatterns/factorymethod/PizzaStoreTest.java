@@ -3,8 +3,8 @@ package com.designpatterns.factorymethod;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.hasItems;
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 public class PizzaStoreTest {
     PizzaStore nyPizzaStore;
@@ -17,12 +17,12 @@ public class PizzaStoreTest {
     @Test
     void shouldSucceed_makeNYCheesePizzas() {
         Pizza pizza = nyPizzaStore.orderPizza("cheese");
-        assertThat(pizza.operations, hasItems("prepare NYCheese", "bake NYCheese", "cut NYCheese", "box NYCheese"));
+        assertThat(pizza.operations).contains("prepare NYCheese", "bake NYCheese", "cut NYCheese", "box NYCheese");
     }
 
     @Test
     void shouldSucceed_makeNYVeggiePizzas() {
         Pizza pizza = nyPizzaStore.orderPizza("veggie");
-        assertThat(pizza.operations, hasItems("prepare NYVeggie", "bake NYVeggie", "cut NYVeggie", "box NYVeggie"));
+        assertThat(pizza.operations).contains("prepare NYVeggie", "bake NYVeggie", "cut NYVeggie", "box NYVeggie");
     }
 }
